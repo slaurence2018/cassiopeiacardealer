@@ -3,6 +3,8 @@ import VehicleList from './VehicleList'
 
 test('renders learn react link', () => {
   render(<VehicleList />);
-  const linkElement = screen.getByText(/toyota/i);
+  const expected ='toyota'
+  const inputData ='{'
+  const linkElement = screen.getByText(/vehicle list/i);
   expect(linkElement).toBeInTheDocument();
 });
