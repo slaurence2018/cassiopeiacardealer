@@ -6,19 +6,19 @@ export const carData = [
     id: "1"
   },
   {
-    make: "Ford",
+    carMake: "Ford",
     model: "Explorer",
     year: "1990",
     id: "2"
   },
   {
-    make: "Ford",
+    carMake: "Ford",
     model: "Explorer",
     year: "2010",
     id: "3"
   },
   {
-    make: "Toyota",
+    carMake: "Toyota",
     model: "Camry",
     year: "2015",
     id: "4"
