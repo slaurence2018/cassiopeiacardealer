@@ -1,23 +1,29 @@
 export const carData = [
   {
-    Make: "Toyota",
-    Model: "Prius",
-    Year: "2000",
+    carMake: "Toyota",
+    model: "Prius",
+    year: "2000",
+    id: "1"
   },
   {
-    Make: "Ford",
-    Model: "Explorer",
-    Year: "1990",
+    make: "Ford",
+    model: "Explorer",
+    year: "1990",
+    id: "2"
   },
   {
-    Make: "Ford",
-    Model: "Explorer",
-    Year: "2010",
+    make: "Ford",
+    model: "Explorer",
+    year: "2010",
+    id: "3"
   },
   {
-    Make: "Toyota",
-    Model: "Camry",
-    Year: "2015",
+    make: "Toyota",
+    model: "Camry",
+    year: "2015",
+    id: "4"
   },
 
 ]
+
+export default carData

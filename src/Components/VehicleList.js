@@ -1,11 +1,13 @@
+import VehicleDetail from './VehicleDetail'
 
 
 
-
-const VehicleList = () => (
-  <div >
-  <h1>vehicle list</h1>
-  </div>
-)
+const VehicleList = (props) => (
+  props.data.map((data) =>  {
+    return (
+      <VehicleDetail id={data.id} carMake={data.carMake} model={data.model} year={data.year}/>
+    );
+  })
+);
 
 export default VehicleList

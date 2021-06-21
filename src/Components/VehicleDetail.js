@@ -1,6 +1,9 @@
+
 const VehicleDetail = (props) => (
-  <div >
-    {props.make}
+  <div>
+    <label >{props.carMake}</label>
+    <label >{props.model}</label>
+    <label >{props.year}</label>
   </div>
 )
 
