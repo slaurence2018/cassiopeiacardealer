@@ -7,10 +7,6 @@ const SearchForm = (props) => {
     const [yearFilter, setYearFilter] = useState("")
 
 
-
-
-
-
     const handleSearch = (evt) => {
         evt.preventDefault()
         let filtersnew = {make: makeFilter, model: modelFilter, year: yearFilter}
@@ -49,7 +45,7 @@ const SearchForm = (props) => {
           />
           </div>
         <br/>
-        <button onClick={handleSearch}>Search</button>
+        <button className="Search-button" onClick={handleSearch}>Search</button>
       </div>
           );
 }
