@@ -5,13 +5,13 @@ import Header from "./Components/Header"
 import SearchForm from "./Components/SearchForm"
 import {useState} from 'react'
 function App() {
-  const [filtersList, setFiltersList] = useState(["original"]);
+  const [filters, setFiltersList] = useState({model: "", make: "", year: ""});
   return (
     <div className="App">
       <Header />
-      <SearchForm setFiltersList={setFiltersList} filtersList={filtersList}/>
+      <SearchForm setFiltersList={setFiltersList} filters={filters}/>
       <div>
-        <VehicleList filtersList={filtersList}/>
+        <VehicleList filters={filters}/>
       </div>
       <Footer />
     </div>

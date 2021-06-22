@@ -4,7 +4,7 @@ const VehicleDetail = (props) => {
   return (
     <div>
       <br />
-      <label >{props.carMake}</label>
+      <label >{props.make}</label>
       <br />
       <label >{props.model}</label>
       <br />
