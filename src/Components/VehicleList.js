@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 const VehicleList = (props) => {
   const [data, setData] = useState([])
 
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await fetch("http://localhost:5000/api/vehicles");
