@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import VehicleDetail from './VehicleDetail'
+import VehicleSummary from './VehicleSummary'
 
 test('render a vehicle detail', () => {
-  render(<VehicleDetail carMake={"toyota"} model={"camry"} year={"1990"} id={"1"}/>);
+  render(<VehicleSummary carMake={"toyota"} model={"camry"} year={"1990"} id={"1"} />);
 
   expect(screen.getByText("toyota")).toBeInTheDocument()
   expect(screen.getByText("camry")).toBeInTheDocument()

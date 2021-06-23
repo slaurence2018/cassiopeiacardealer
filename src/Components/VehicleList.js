@@ -1,4 +1,4 @@
-import VehicleDetail from './VehicleDetail'
+import VehicleSummary from './VehicleSummary'
 import { useEffect, useState } from 'react'
 
 const VehicleList = (props) => {
@@ -22,15 +22,15 @@ const VehicleList = (props) => {
 
     console.log("props filters model: ", props.filters)
 
-    if ( dataItem.model.toString().toLowerCase() !== props.filters.model.toString().toLowerCase()
-      && props.filters.model.toString() !== ""){
+    if (dataItem.model.toString().toLowerCase() !== props.filters.model.toString().toLowerCase()
+      && props.filters.model.toString() !== "") {
       isItemDisplayed = false
     }
-    if ( dataItem.make.toString().toLowerCase() !== props.filters.make.toString().toLowerCase()
+    if (dataItem.make.toString().toLowerCase() !== props.filters.make.toString().toLowerCase()
       && props.filters.make.toString() !== "") {
       isItemDisplayed = false
     }
-    if ( dataItem.year.toString().toLowerCase() !== props.filters.year.toString().toLowerCase()
+    if (dataItem.year.toString().toLowerCase() !== props.filters.year.toString().toLowerCase()
       && props.filters.year.toString() !== "") {
       isItemDisplayed = false
     }
@@ -40,10 +40,10 @@ const VehicleList = (props) => {
 
   return (
     <div className="App" >{
-      data.filter((dataItem) => isDataItemDisplayed(dataItem) === true ).map(dataItem => {
-          return (
-            <VehicleDetail {...dataItem} />
-          );
+      data.filter((dataItem) => isDataItemDisplayed(dataItem) === true).map(dataItem => {
+        return (
+          <VehicleSummary {...dataItem} />
+        );
       })
     }
     </div>
