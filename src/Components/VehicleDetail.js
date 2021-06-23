@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 const VehicleDetail = (props) => {
 
   return (
-    <Container>
+    <Container >
     <Card border="secondary">
       <Card.Header style={{ color: '#1e81b0', fontWeight: 'bold', fontSize: 18}}>${props.price}</Card.Header>
       <div key={props.id} style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 10, padding: 5, }}>
