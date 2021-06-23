@@ -20,8 +20,6 @@ const VehicleList = (props) => {
   const isDataItemDisplayed = (dataItem) => {
     let isItemDisplayed = true
 
-    console.log("props filters model: ", props.filters)
-
     if (dataItem.model.toString().toLowerCase() !== props.filters.model.toString().toLowerCase()
       && props.filters.model.toString() !== "") {
       isItemDisplayed = false
