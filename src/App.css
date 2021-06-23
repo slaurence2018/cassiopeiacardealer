@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -96,14 +94,31 @@ p {
 #search {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+html {
+  scroll-behaviour: smooth;
 }
+
+div.scroll {
+  margin:4px;
+  padding:4px;
+  background-color: green;
+  width: 500px;
+  height: 110px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:justify;
+}
+
+.App {
+  margin:4px;
+  padding:4px;
+  width: 500px;
+  height: 560px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align:center;
+}
+
