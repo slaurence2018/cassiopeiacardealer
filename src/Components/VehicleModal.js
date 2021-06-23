@@ -25,7 +25,7 @@ const VehicleModal = (props) => {
                         Close
                     </Button>
                     <Button variant="primary" onClick={handleClose}>
-                        Purchase
+                        Add to Cart
               </Button>
                 </Modal.Footer>
             </Modal>

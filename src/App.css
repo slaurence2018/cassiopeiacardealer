@@ -120,3 +120,10 @@ div.scroll {
   overflow-y: auto;
   text-align: center;
 }
+
+
+.removeButton {
+  background-color: #00000000;
+  color: #00000000;
+  background: #00000000;
+}

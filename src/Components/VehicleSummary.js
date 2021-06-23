@@ -22,7 +22,7 @@ const VehicleSummary = (props) => {
             <p>Year: {props.year}</p>
           </div>
           <div>
-            <Button variant="primary" className="buy">Buy</Button>
+            <Button variant="primary" className="buy">Add to Cart</Button>
             <p><VehicleModal {...props} /></p>
           </div>
         </div>

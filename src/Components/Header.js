@@ -1,4 +1,5 @@
 import React from "react";
+import ShoppingCartModal from './ShoppingCartModal'
 
 export default function Header() {
     return (
@@ -8,6 +9,7 @@ export default function Header() {
                 crossOrigin="anonymous"/>
             <img alt="CASSIOPEIA CAR DEALER" src="/images/logo.png" />
             <h1>CASSIOPEIA CAR DEALER</h1>
+            <ShoppingCartModal />
         </header>
     );
 }
