@@ -32,6 +32,10 @@ const VehicleList = (props) => {
       && props.filters.fromYear.toString() !== "") {
       isItemDisplayed = false
     }
+    if (parseInt(dataItem.year) > parseInt(props.filters.toYear)
+        && props.filters.toYear.toString() !== "") {
+      isItemDisplayed = false
+    }
 
     return isItemDisplayed
   }

@@ -10,7 +10,7 @@ test('test vehicleList populated with cars', async () => {
   });
 
 
-  let testFilters = {model: "", make: "", fromYear: ""}
+  let testFilters = {model: "", make: "", fromYear: "", toYear:""}
 
   render(<VehicleList filters={testFilters}/>);
 
@@ -33,7 +33,7 @@ test('test filter works', async () => {
   });
 
 
-  let testFilters = {model: "", make: "toyota", fromYear: ""}
+  let testFilters = {model: "", make: "toyota", fromYear: "", toYear: ""}
 
   render(<VehicleList filters={testFilters}/>);
 
@@ -57,7 +57,7 @@ test('test filter works with partial phrases', async () => {
   });
 
 
-  let testFilters = {model: "", make: "toy", fromYear: ""}
+  let testFilters = {model: "", make: "toy", fromYear: "", toYear: ""}
 
   render(<VehicleList filters={testFilters}/>);
 
@@ -80,7 +80,7 @@ test('test filter works from year', async () => {
   });
 
 
-  let testFilters = {model: "", make: "", fromYear: "2000"}
+  let testFilters = {model: "", make: "", fromYear: "2000", toYear: ""}
 
   render(<VehicleList filters={testFilters}/>);
 

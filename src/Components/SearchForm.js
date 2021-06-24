@@ -5,11 +5,12 @@ const SearchForm = (props) => {
     const [modelFilter, setModelFilter] = useState("")
     const [makeFilter, setMakeFilter] = useState("")
     const [fromYearFilter, setFromYearFilter] = useState("")
+    const [toYearFilter, setToYearFilter] = useState("")
 
 
     const handleSearch = (evt) => {
         evt.preventDefault()
-        let filtersnew = {make: makeFilter, model: modelFilter, year: fromYearFilter}
+        let filtersnew = {make: makeFilter, model: modelFilter, fromYear: fromYearFilter, toYear: toYearFilter}
         props.setFiltersList(filtersnew)
         return
     }
@@ -44,7 +45,17 @@ const SearchForm = (props) => {
                  setFromYearFilter(event.target.value)
                }}
         />
-      </div>
+        </div>
+
+        <div>
+            <label htmlFor="toYear">To Year</label>{"  "}
+            <input type="text" id="to-year-input" aria-label={"To Year:"}
+                   value={toYearFilter}
+                   onChange={(event) => {
+                       setToYearFilter(event.target.value)
+                   }}
+            />
+        </div>
       <div>
         <button onClick={handleSearch}>Search</button>
       </div>
