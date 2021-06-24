@@ -10,7 +10,7 @@ test('test vehicleList populated with cars', async () => {
   });
 
 
-  let testFilters = {model: "", make: "", year: ""}
+  let testFilters = {model: "", make: "", fromYear: ""}
 
   render(<VehicleList filters={testFilters}/>);
 
@@ -33,7 +33,7 @@ test('test filter works', async () => {
   });
 
 
-  let testFilters = {model: "", make: "toyota", year: ""}
+  let testFilters = {model: "", make: "toyota", fromYear: ""}
 
   render(<VehicleList filters={testFilters}/>);
 
@@ -57,7 +57,30 @@ test('test filter works with partial phrases', async () => {
   });
 
 
-  let testFilters = {model: "", make: "toy", year: ""}
+  let testFilters = {model: "", make: "toy", fromYear: ""}
+
+  render(<VehicleList filters={testFilters}/>);
+
+  await waitFor(() => expect(screen.queryByText("Make: honda")).not.toBeInTheDocument())
+  await waitFor(() => expect(screen.queryByText("Model: civic")).not.toBeInTheDocument())
+  await waitFor(() => expect(screen.queryByText("Year: 1990")).not.toBeInTheDocument())
+
+  await waitFor(() => expect(screen.getByText("Make: toyota")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Model: prius")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Year: 2010")).toBeInTheDocument())
+
+})
+
+test('test filter works from year', async () => {
+  const car1 = {make:"honda", model:"civic", year:"1990", id:"1", price:"49.95"}
+  const car2 = {make:"toyota", model:"prius", year:"2010", id:"2", price:"49.95"}
+
+  jest.spyOn(window, "fetch").mockResolvedValue({
+    json: async () => ([car1,car2]),
+  });
+
+
+  let testFilters = {model: "", make: "", fromYear: "2000"}
 
   render(<VehicleList filters={testFilters}/>);
 

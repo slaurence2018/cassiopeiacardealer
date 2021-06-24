@@ -4,12 +4,12 @@ import {useState} from 'react'
 const SearchForm = (props) => {
     const [modelFilter, setModelFilter] = useState("")
     const [makeFilter, setMakeFilter] = useState("")
-    const [yearFilter, setYearFilter] = useState("")
+    const [fromYearFilter, setFromYearFilter] = useState("")
 
 
     const handleSearch = (evt) => {
         evt.preventDefault()
-        let filtersnew = {make: makeFilter, model: modelFilter, year: yearFilter}
+        let filtersnew = {make: makeFilter, model: modelFilter, year: fromYearFilter}
         props.setFiltersList(filtersnew)
         return
     }
@@ -37,11 +37,11 @@ const SearchForm = (props) => {
       </div>
 
       <div>
-        <label htmlFor="Year">Year</label>{"  "}
-        <input type="text" id="year-input" aria-label={"Year:"}
-               value={yearFilter}
+        <label htmlFor="fromYear">From Year</label>{"  "}
+        <input type="text" id="from-year-input" aria-label={"From Year:"}
+               value={fromYearFilter}
                onChange={(event) => {
-                 setYearFilter(event.target.value)
+                 setFromYearFilter(event.target.value)
                }}
         />
       </div>

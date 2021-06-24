@@ -27,7 +27,7 @@ const ShoppingCartItem = (props) => {
           <div align={"left"} >
             <p>Make: {props.make}</p>
             <p>Model: {props.model}</p>
-            <p>Year: {props.year}</p>
+            <p>From Year: {props.year}</p>
             <p>Color: {props.color}</p>
           </div>
 

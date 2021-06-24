@@ -28,8 +28,8 @@ const VehicleList = (props) => {
       && props.filters.make.toString() !== "") {
       isItemDisplayed = false
     }
-    if (!dataItem.year.toString().toLowerCase().includes(props.filters.year.toString().toLowerCase())
-      && props.filters.year.toString() !== "") {
+    if (parseInt(dataItem.year) < parseInt(props.filters.fromYear)
+      && props.filters.fromYear.toString() !== "") {
       isItemDisplayed = false
     }
 
