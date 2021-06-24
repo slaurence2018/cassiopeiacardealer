@@ -20,15 +20,15 @@ const VehicleList = (props) => {
   const isDataItemDisplayed = (dataItem) => {
     let isItemDisplayed = true
 
-    if (dataItem.model.toString().toLowerCase() !== props.filters.model.toString().toLowerCase()
+    if (!dataItem.model.toString().toLowerCase().includes(props.filters.model.toString().toLowerCase())
       && props.filters.model.toString() !== "") {
       isItemDisplayed = false
     }
-    if (dataItem.make.toString().toLowerCase() !== props.filters.make.toString().toLowerCase()
+    if (!dataItem.make.toString().toLowerCase().includes(props.filters.make.toString().toLowerCase())
       && props.filters.make.toString() !== "") {
       isItemDisplayed = false
     }
-    if (dataItem.year.toString().toLowerCase() !== props.filters.year.toString().toLowerCase()
+    if (!dataItem.year.toString().toLowerCase().includes(props.filters.year.toString().toLowerCase())
       && props.filters.year.toString() !== "") {
       isItemDisplayed = false
     }
