@@ -40,7 +40,7 @@ const VehicleList = (props) => {
     <div className="App" >{
       data.filter((dataItem) => isDataItemDisplayed(dataItem) === true).map(dataItem => {
         return (
-          <VehicleSummary {...dataItem} />
+          <VehicleSummary key={dataItem.id} {...dataItem} />
         );
       })
     }

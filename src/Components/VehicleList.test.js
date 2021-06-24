@@ -1,19 +1,48 @@
-import { render, screen } from '@testing-library/react';
+import { render, waitFor, screen } from '@testing-library/react';
 import VehicleList from './VehicleList'
 
-test('renders learn react link', () => {
-  const car1 = {carMake:"honda", model:"civic", year:"1990", id:"1"}
-  const car2 = {carMake:"toyota", model:"prius", year:"2010", id:"2"}
+test('test vehicleList populated with cars', async () => {
+  const car1 = {make:"honda", model:"civic", year:"1990", id:"1", price:"49.95"}
+  const car2 = {make:"toyota", model:"prius", year:"2010", id:"2", price:"49.95"}
 
-  let inputData = [car1,car2]
-  render(<VehicleList data={inputData}/>);
+  jest.spyOn(window, "fetch").mockResolvedValue({
+    json: async () => ([car1,car2]),
+  });
 
-  expect(screen.getByText("honda")).toBeInTheDocument()
-  expect(screen.getByText("civic")).toBeInTheDocument()
-  expect(screen.getByText("1990")).toBeInTheDocument()
 
-  expect(screen.getByText("toyota")).toBeInTheDocument()
-  expect(screen.getByText("prius")).toBeInTheDocument()
-  expect(screen.getByText("2010")).toBeInTheDocument()
+  let testFilters = {model: "", make: "", year: ""}
 
-});
+  render(<VehicleList filters={testFilters}/>);
+
+  await waitFor(() => expect(screen.getByText("Make: honda")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Model: civic")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Year: 1990")).toBeInTheDocument())
+
+  await waitFor(() => expect(screen.getByText("Make: toyota")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Model: prius")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Year: 2010")).toBeInTheDocument())
+
+})
+
+test('test filter works', async () => {
+  const car1 = {make:"honda", model:"civic", year:"1990", id:"1", price:"49.95"}
+  const car2 = {make:"toyota", model:"prius", year:"2010", id:"2", price:"49.95"}
+
+  jest.spyOn(window, "fetch").mockResolvedValue({
+    json: async () => ([car1,car2]),
+  });
+
+
+  let testFilters = {model: "", make: "toyota", year: ""}
+
+  render(<VehicleList filters={testFilters}/>);
+
+  await waitFor(() => expect(screen.queryByText("Make: honda")).not.toBeInTheDocument())
+  await waitFor(() => expect(screen.queryByText("Model: civic")).not.toBeInTheDocument())
+  await waitFor(() => expect(screen.queryByText("Year: 1990")).not.toBeInTheDocument())
+
+  await waitFor(() => expect(screen.getByText("Make: toyota")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Model: prius")).toBeInTheDocument())
+  await waitFor(() => expect(screen.getByText("Year: 2010")).toBeInTheDocument())
+
+})
