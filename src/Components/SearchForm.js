@@ -17,48 +17,50 @@ const SearchForm = (props) => {
 
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gridGap: 20 }}>
-      <div>
-        <label htmlFor="Make">Make</label>{"  "}
-        <input type="text" id="make-input" aria-label={"Make:"}
-               value={makeFilter}
-               onChange={(event) => {
-                 setMakeFilter(event.target.value)
-               }}
-        />
-      </div>
-      <div>
-        <label htmlFor="Model">Model</label>{"  "}
-        <input type="text" id="model-input" aria-label={"Model:"}
-               value={modelFilter}
-               onChange={(event) => {
-                 setModelFilter(event.target.value)
-               }}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="fromYear">From Year</label>{"  "}
-        <input type="text" id="from-year-input" aria-label={"From Year:"}
-               value={fromYearFilter}
-               onChange={(event) => {
-                 setFromYearFilter(event.target.value)
-               }}
-        />
-        </div>
-
-        <div>
-            <label htmlFor="toYear">To Year</label>{"  "}
-            <input type="text" id="to-year-input" aria-label={"To Year:"}
-                   value={toYearFilter}
+    <div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gridGap: 20 }}>
+          <div>
+            <label htmlFor="Make">Make</label>{"  "}
+            <input type="text" id="make-input" aria-label={"Make:"}
+                   value={makeFilter}
                    onChange={(event) => {
-                       setToYearFilter(event.target.value)
+                     setMakeFilter(event.target.value)
                    }}
             />
+          </div>
+          <div>
+            <label htmlFor="Model">Model</label>{"  "}
+            <input type="text" id="model-input" aria-label={"Model:"}
+                   value={modelFilter}
+                   onChange={(event) => {
+                     setModelFilter(event.target.value)
+                   }}
+            />
+          </div>
         </div>
-      <div>
-        <button onClick={handleSearch}>Search</button>
-      </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}>
+          <div>
+            <label htmlFor="fromYear">Year</label>
+            <input type="text" id="from-year-input" aria-label={"From Year:"}
+                   value={fromYearFilter}
+                   onChange={(event) => {
+                     setFromYearFilter(event.target.value)
+                   }}
+            />
+            </div>
+            <div>
+                <label htmlFor="toYear">-</label>
+                <input type="text" id="to-year-input" aria-label={"To Year:"}
+                       value={toYearFilter}
+                       onChange={(event) => {
+                           setToYearFilter(event.target.value)
+                       }}
+                />
+            </div>
+        </div>
+        <div >
+            <button onClick={handleSearch}>Search</button>
+          </div>
     </div>
   );
 }
