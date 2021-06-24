@@ -5,5 +5,5 @@ test('render the header', () => {
     render(<Footer />);
 
     expect(screen.getByText("Location | Contact")).toBeInTheDocument()
-    expect(screen.getByText("Cassiopeia Car Dealer 2020")).toBeInTheDocument()
+    expect(screen.getByText("© Cassiopeia Car Dealer 2020")).toBeInTheDocument()
 });
