@@ -1,5 +1,5 @@
 import './App.css';
-import {Spinner} from 'react-bootstrap'
+// import {Spinner} from 'react-bootstrap'
 import Footer from "./Components/Footer"
 import Header from "./Components/Header"
 import SearchForm from "./Components/SearchForm"
@@ -18,7 +18,7 @@ function App() {
           <SearchForm setFiltersList={setFiltersList} filters={filters}/>
         </section>
         <section id="vehicles" >
-          <Suspense fallback={ <Spinner animation="border" /> }>
+          <Suspense fallback={ <progress /> }>
              <VehicleList filters={filters}/>
           </Suspense>
         </section>

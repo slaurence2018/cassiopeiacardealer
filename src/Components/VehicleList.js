@@ -41,6 +41,37 @@ const VehicleList = (props) => {
 
   }, [props]);
 
+
+
+  // UseEffect(()  => {
+  //   const isDataItemDisplayed = (dataItem) => {
+  //     let isItemDisplayed = true
+  //
+  //     if (!dataItem.model.toString().toLowerCase().includes(props.filters.model.toString().toLowerCase())
+  //       && props.filters.model.toString() !== "") {
+  //       isItemDisplayed = false
+  //     }
+  //     if (!dataItem.make.toString().toLowerCase().includes(props.filters.make.toString().toLowerCase())
+  //       && props.filters.make.toString() !== "") {
+  //       isItemDisplayed = false
+  //     }
+  //     if (parseInt(dataItem.year) < parseInt(props.filters.fromYear)
+  //       && props.filters.fromYear.toString() !== "") {
+  //       isItemDisplayed = false
+  //     }
+  //     if (parseInt(dataItem.year) > parseInt(props.filters.toYear)
+  //       && props.filters.toYear.toString() !== "") {
+  //       isItemDisplayed = false
+  //     }
+  //
+  //     return isItemDisplayed
+  //   }
+  //   let newData = data.filter((dataItem) => isDataItemDisplayed(dataItem) === true)
+  //   setData(newData);
+  // }, [props, data])
+  //
+
+
   const CreateVehicleSummary = useCallback(({index, style}) => {
     const dataItem =  data[index]
       return (
