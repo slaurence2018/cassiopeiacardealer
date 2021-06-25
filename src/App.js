@@ -18,8 +18,8 @@ function App() {
           <SearchForm setFiltersList={setFiltersList} filters={filters}/>
         </section>
         <section id="vehicles" >
-            <Suspense fallback={<Spinner animation="border" />}>
-          <VehicleList filters={filters}/>
+          <Suspense fallback={ <Spinner animation="border" /> }>
+             <VehicleList filters={filters}/>
           </Suspense>
         </section>
       </main>
