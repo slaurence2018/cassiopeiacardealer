@@ -1,10 +1,13 @@
 import './App.css';
-import VehicleList from './Components/VehicleList'
+import {Spinner} from 'react-bootstrap'
 import Footer from "./Components/Footer"
 import Header from "./Components/Header"
 import SearchForm from "./Components/SearchForm"
+import {Suspense, useState, lazy} from "react";
+const VehicleList =  lazy(() =>  import( './Components/VehicleList'));
 
-import {useState} from 'react'
+
+
 function App() {
   const [filters, setFiltersList] = useState({model: "", make: "", year: ""});
   return (
@@ -15,7 +18,9 @@ function App() {
           <SearchForm setFiltersList={setFiltersList} filters={filters}/>
         </section>
         <section id="vehicles" >
+            <Suspense fallback={<Spinner animation="border" />}>
           <VehicleList filters={filters}/>
+          </Suspense>
         </section>
       </main>
       <Footer />
